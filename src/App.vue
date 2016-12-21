@@ -1,6 +1,6 @@
 <template>
   <div id="cicada-app">
-    <thread-view></thread-view>
+    <thread-view :posts="posts" v-on:contribute="contribute"></thread-view>
   </div>
 </template>
 
@@ -9,8 +9,14 @@ import ThreadView from './components/ThreadView';
 
 export default {
   name: 'app',
+  props: ['posts'],
   components: {
     ThreadView,
+  },
+  methods: {
+    contribute: function contribute(message) {
+      this.$emit('contribute', message);
+    },
   },
 };
 </script>

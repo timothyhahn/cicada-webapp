@@ -22,26 +22,11 @@
 <script>
 import Post from './Post';
 
-const testData = [
-  {
-    username: 'tim',
-    message: 'Hey!',
-    timestamp: 0,
-    id: 1,
-  },
-  {
-    username: 'pim',
-    message: 'Morbi hendrerit, odio in porttitor scelerisque, massa risus viverra dolor, sed porttitor turpis nulla in nibh. Suspendisse sagittis, nisi in cursus dignissim, ipsum ante aliquet nulla, eget maximus est sapien ut erat. Pellentesque gravida justo vitae libero dictum rhoncus. Pellentesque semper fringilla est ac aliquam. Mauris sit amet ex a tortor egestas dignissim sit amet quis neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum efficitur nunc, non dignissim nunc accumsan sit amet. Praesent at nunc ullamcorper, molestie dolor in, condimentum nulla. Vestibulum a nisl urna. Ut in justo eget sem congue finibus. Vivamus porttitor placerat tortor et facilisis. Aenean laoreet malesuada molestie. Aenean sed vestibulum eros, ut elementum turpis',
-    timestamp: 10,
-    id: 2,
-  },
-];
-
 export default {
   name: 'thread-view',
+  props: ['posts'],
   data() {
     return {
-      posts: testData,
       text: '',
     };
   },
@@ -55,6 +40,7 @@ export default {
         message: this.text,
         id: Math.random(),
       });
+      this.$emit('contribute', this.text);
 
       this.text = '';
     },
