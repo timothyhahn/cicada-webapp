@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+  <div id="cicada-app">
+    <thread-view></thread-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+import ThreadView from './components/ThreadView';
 
 export default {
   name: 'app',
   components: {
-    Hello,
+    ThreadView,
   },
 };
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass?outputStyle=expanded">
+  #cicada-app {
+    font-family: "Gill Sans","Gill Sans MT",Calibri,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2C3E50;
+    margin-top: 60px;
+  }
 </style>
+#
